@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/css/buyTicketPage.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="container_header">
+            <a  href="/"><h3>Скоро в кино</h3></a>
+            <a  href="/"><h2>Abadoned</h2></a>
+        </div>
+    </header>
+
+    <div class="second_block">
+        <div class="container_second_block">
+            <div class="poster_film">
+                <img th:src="${film[0].urlOnPoster}" width="255" height="365">
+            </div>
+            <div class="main_info">
+                <div class="name_film">
+                    <h1 th:text="${film[0].title}"></h1>
+                </div>
+                <div class="info_cinema">
+                    <p class="datetime_start_film" th:text="${schedule[0].startTime}"></p>
+                    <p>|</p>
+                    <p class="id_hall">Зал 9</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="third_block">
+        <div class="container_third_block">
+            <div class="image_screen"> <img src="https://i.imgur.com/fZdvpUN.png"></div>
+            <div class="place_buttons"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="info_about_cinema">
+                <h4>Кинотеатр</h4>
+                <a href="/"><p>Вакансии</p></a>
+                <a href="/"><p>Акции и скидки</p></a>
+            </div>
+            <div class="contacts">
+                <h4>Контакты</h4>
+                <div style="position:relative;overflow:hidden; border-radius: 5px"><a href="https://yandex.ru/maps/51/samara/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Самара</a><a href="https://yandex.ru/maps/51/samara/house/ulitsa_lukacheva_34a/YUkYdwFpTEUAQFtpfX5wdHhhYA==/?from=tabbar&ll=50.170530%2C53.215147&mode=search&sctx=ZAAAAAgBEAAaKAoSCfYksDkHDUlAEQiQoWMHmUpAEhIJPdaMDHIX5T8Rc%2FG3PUFi3T8iBgABAgMEBSgKOABAmp0GSAFiJHJlbGV2X2JpZ19hdXRvc2NhbGVfbGltaXRfcnVicmljPTEwMGIhbWlkZGxlX3dpemV4dHJhPWhuc3dfZW1iZWRkaW5ncz0xYjxtaWRkbGVfd2l6ZXh0cmE9cHBvX2Rpc2FibGVfcnVicmljX2ZpbHRlcl9jYm1fdGhyZXNob2xkPTAuOTRiHHJlbGV2X2F1dG9zY2FsZV9zd2FwX2VxdWFsPTFiJHJlbGV2X2JpZ19hdXRvc2NhbGVfZmFjdG9yX3J1YnJpYz0xNmIXcmVsZXZfbWlucmVzX3J1YnJpYz0xMDBiIHJlbGV2X3J1YnJpY19leHRyYV9hdXRvc2NhbGluZz0xagJydZ0BzcxMPaABAKgBAL0BQN2%2FouoBAPIBAPgBAIICCtC60LDRgNGC0YuKAgCSAgCaAgxkZXNrdG9wLW1hcHM%3D&sll=50.170530%2C53.215147&source=serp_navig&sspn=0.006478%2C0.002280&text=%D0%BA%D0%B0%D1%80%D1%82%D1%8B&utm_medium=mapframe&utm_source=maps&z=18.25" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Лукачева, 34А — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUVnNELcD" width="520" height="250" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+<script>
+
+    for (let i=0;i<7;i++){
+        for (let j=0;j<14;j++){
+            let k =j+i*14;
+            document.querySelector('.place_buttons').innerHTML+="<button class='place' id="+k+"></button>";
+             }
+    }
+    for (let i=0;i<7;i++){
+        for (let j=0;j<14;j++){
+            let k =j+i*14;
+            document.getElementById(k).onclick=function (){
+                document.getElementById(k).classList.toggle("bought");
+            };
+        }
+    }
+</script>
+</html>

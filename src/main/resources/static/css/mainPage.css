@@ -1,0 +1,284 @@
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+html{
+    background-color: #141414;
+    font-family: Arial;
+}
+h2,h3{
+    font-family: Arial;
+    color: white;
+
+}
+.container_header h2{
+    margin-top: 17px;
+    position: relative;
+    margin-left: 0px;
+    font-size: 30px;
+    left: 700px;
+}
+.container_header h3{
+    position: relative;
+    left: 52px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+header{
+    width: 1913px;
+    height: 90px;
+    background-color: #22252A;
+    margin-left: -8px;
+    margin-top: -9px;
+}
+.container_header{
+    position: absolute;
+    margin-top: 13px;
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    left: 50%;
+    margin-left: -953px;
+    position: absolute;
+    width: 1000px;
+}
+.second_block{
+    margin-left: 52px;
+    margin-top: 40px;
+}
+
+.date_where_buttons{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 1500px;
+}
+.now_in_cinema h1{
+    color: white;
+    font-family: Arial;
+    font-size: 48px;
+}
+.third_block{
+    position: relative;
+    background-image: url("https://i.imgur.com/UVdJEUs.png");
+    background-repeat: no-repeat;
+    top: 32px;
+    width: 1905px;
+}
+.container_third_block{
+    margin-left: 176px;
+    padding-top: 32px;
+}
+.date_where_buttons button{
+    width: 243px;
+    height: 74px;
+    border-color: #FED60B;
+    background: rgba(0,0,0,0);
+    border-radius: 5px;
+    color: white;
+    margin-right: 22px;
+}
+
+.datetime_on_button{
+    font-size: 24px;
+    font-family: Arial;
+}
+.date_where_buttons button:hover{
+    background-color: #FED60B;
+    color: #141414;
+
+}
+.date_where_buttons .select_button{
+    background-color: #FED60B;
+    color: #141414;
+}
+
+.film_page{
+    width:1170px;
+    height: 380px;
+    background-color: #22252A;
+    margin-top: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.name_film{
+    position: absolute;
+    left: 295px;
+    top: -26px;
+    font-size: 48px;
+}
+.info_container{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    left: 295px;
+    top: 58px;
+    color: white;
+}
+.genre_film{
+    margin-left: 30px;
+}
+.schedule_block{
+    width: 94px;
+    height: 63px;
+    background-color: #FED60B;
+    border-radius: 5px;
+    margin-left:17px ;
+    padding-top: 10px;
+}
+.schedule_block p{
+    color: black;
+}
+.time_schedule,.price_schedule{
+
+
+    align-items: center;
+    margin-left: 25px;
+}
+.schedule_blocks_container{
+    position: absolute;
+    left: 279px;
+    top: 160px;
+    display: flex;
+    flex-direction: row;
+}
+.poster_film{
+    width: 252px;
+    height: 362px;
+    position: absolute;
+    left:10px;
+    top: 10px;
+}
+.poster_film img{
+    border-radius: 5px;
+}
+.films_container{
+    position: relative;
+    top: 25px;
+}
+footer{
+    position: relative;
+    top:80px ;
+}
+.footer{
+    width: 1891px;
+    height: 520px;
+    background-color:#22252A;
+    color: white;
+}
+.info_cinema{
+    position: absolute;
+    left:80px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.contacts{
+    position: absolute;
+    left: 1000px;
+    top: 100px;
+}
+.footer h4{
+    font-size: 32px;
+}
+.footer p {
+    font-size:24px ;
+}
+
+.hide{
+    display: none;
+}
+
+
+/*slider css*/
+#slides{
+    position: relative;
+    height: 720px;
+    width: 1820px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing{
+    opacity: 1;
+    z-index: 2;
+}
+
+
+.controls{
+    display: none;
+}
+
+.slide{
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-size: cover;
+}
+.slide:nth-of-type(1){
+    background-color: red;
+    background-image: url('https://training.clickdayitalia.it/web/img/events-index.jpg');
+}
+.slide:nth-of-type(2){
+    background-color: orange;
+    background-image: url('https://torrent-rose.ru/_ld/279/71502010.png');
+}
+.slide:nth-of-type(3){
+    background-color: green;
+    background-image: url('https://s3-cache.yorck.cloud/system/uploads/cinema/teaser_image/54ed9ff26831381d721c0000/show_retina_International_Header_2x.jpg');
+}
+
+.controls{
+    color: #FED60B;
+    border: #141414;
+    background: rgba(0,0,0,0.3);
+    padding: 0px 0px;
+    font-size: 50px;
+    cursor: pointer;
+    margin: 10px 0px 0px 10px;
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+}
+
+.controls:hover{
+    color: white;
+}
+.container_slider{
+    position: relative;
+}
+#next{
+    position: absolute;
+    left: 183%;
+}
+.buttons{
+    position: absolute;
+    left: 0px;
+    top: 41%;
+    z-index: 10;
+    font-size: 0px;
+    width: 100%;
+}
+/*slider css*/

@@ -1,0 +1,154 @@
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+html{
+    background-color: #141414;
+    font-family: Arial;
+    color: white;
+}
+h2,h3{
+    font-family: Arial;
+
+
+}
+.container_header h2{
+    margin-top: 17px;
+    position: relative;
+    margin-left: 0px;
+    font-size: 30px;
+    left: 700px;
+}
+.container_header h3{
+    position: relative;
+    left: 52px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+header{
+    width: 1913px;
+    height: 90px;
+    background-color: #22252A;
+    margin-left: -8px;
+    margin-top: -9px;
+}
+.container_header{
+    position: absolute;
+    margin-top: 13px;
+    display: flex;
+    flex-direction: row;
+}
+.container{
+    left: 50%;
+    margin-left: -953px;
+    position: absolute;
+    width: 1000px;
+}
+.second_block{
+    position: relative;
+    top: 45px;
+    margin-left: 175px;
+}
+.container_second_block{
+    width: 1570px;
+    height: 390px;
+    border-radius: 5px;
+    background-color: #22252A;
+}
+.poster_film{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.poster_film img{
+    border-radius: 5px;
+}
+.main_info{
+    position: absolute;
+    left:295px;
+    top: 88px;
+    width: 1000px;
+}
+.main_info h1{
+    font-size: 64px;
+}
+.info_cinema p{
+    color: #80807F;
+    font-size: 24px;
+    margin-right: 55px;
+}
+.info_cinema{
+    position: absolute;
+    top: 110px;
+    display: flex;
+    flex-direction: row;
+}
+.third_block{
+    position: relative;
+
+    height: 700px;
+}
+.container_third_block{
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.image_screen{
+    position: absolute;
+    left: 300px;
+    top: 20px;
+}
+.place_buttons{
+    position: absolute;
+    left: 433px;
+    top: 195px;
+
+    width: 1100px;
+}
+.place{
+    background-color: rgb(0,0,0,0);
+    border-color:rgb(0,0,0,0) ;
+    margin-left: 10px;
+    margin-top: -5px;
+    background-image: url('https://i.imgur.com/c3udq64.png');
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 88px;
+    cursor: pointer;
+}
+.bought{
+    background-image: url('https://i.imgur.com/g2GM4zK.png');
+    background-repeat: no-repeat;
+}
+footer{
+    position: relative;
+    float: left;
+    top:80px ;
+}
+.footer{
+    width: 1891px;
+    height: 520px;
+    background-color:#22252A;
+    color: white;
+}
+.info_about_cinema{
+    position: absolute;
+    left:80px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.contacts{
+    position: absolute;
+    left: 1000px;
+    top: 100px;
+}
+.footer h4{
+    font-size: 32px;
+}
+.footer p {
+    font-size:24px ;
+}
