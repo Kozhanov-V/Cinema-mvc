@@ -26,7 +26,7 @@
                 <div class="info_cinema">
                     <p class="datetime_start_film" th:text="${schedule[0].startTime}"></p>
                     <p>|</p>
-                    <p class="id_hall">Зал 9</p>
+                    <p class="id_hall" th:text="'Зал ' + ${schedule[0].idHall}"></p>
                 </div>
             </div>
         </div>
@@ -36,7 +36,9 @@
         <div class="container_third_block">
             <div class="image_screen"> <img src="https://i.imgur.com/fZdvpUN.png"></div>
             <div class="place_buttons"></div>
+            <button id="button_on_buy">Оплатить покупку</button>
         </div>
+
     </div>
 
     <footer>
@@ -52,23 +54,62 @@
             </div>
         </div>
     </footer>
+
+
+</div>
+<div class="tickets" th:each="ticket : ${tickets}">
+    <div th:width="placerow=${ticket.place + ticket.row*14}">
+         <span class="ticket"  th:text="${placerow}"></span>
+    </div>
+
 </div>
 </body>
 <script>
-
-    for (let i=0;i<7;i++){
-        for (let j=0;j<14;j++){
+    let buyTicket =[];
+    for (let i=1;i<=7;i++){
+        for (let j=1;j<=14;j++){
             let k =j+i*14;
             document.querySelector('.place_buttons').innerHTML+="<button class='place' id="+k+"></button>";
              }
     }
-    for (let i=0;i<7;i++){
-        for (let j=0;j<14;j++){
+    for (let i=1;i<=7;i++){
+        for (let j=1;j<=14;j++){
             let k =j+i*14;
-            document.getElementById(k).onclick=function (){
-                document.getElementById(k).classList.toggle("bought");
-            };
+            let item = document.getElementById(k)
+            document.getElementById(k).onclick=function () {
+                if(!item.classList.contains("reserve_ticket")) {
+                    if (buyTicket.length < 8) {
+
+                        item.classList.toggle("bought");
+                        if (item.classList.contains("bought")) {
+                            buyTicket.push(k);
+                        } else {
+                            buyTicket = buyTicket.filter(value => value !== k)
+                        }
+                     }
+                    else{
+                        item.classList.remove("bought");
+                        buyTicket = buyTicket.filter(value => value !== k)
+                    }
+                }
+            }
         }
     }
+
+    let tickets = document.querySelectorAll(".ticket");
+    tickets.forEach(e=>{
+        document.getElementById(e.textContent).classList.add("reserve_ticket");
+    })
+
+    document.getElementById("button_on_buy").onclick=function () {
+        console.log(buyTicket);
+        var xhr =new XMLHttpRequest();
+        var body ='tickets=' + buyTicket;
+        xhr.open("POST",document.URL,true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.send(body);
+    }
+
 </script>
 </html>

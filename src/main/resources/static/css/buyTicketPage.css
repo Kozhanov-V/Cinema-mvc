@@ -126,7 +126,7 @@ header{
 footer{
     position: relative;
     float: left;
-    top:80px ;
+    top:180px ;
 }
 .footer{
     width: 1891px;
@@ -151,4 +151,28 @@ footer{
 }
 .footer p {
     font-size:24px ;
+}
+.tickets{
+    display: none;
+}
+#button_on_buy{
+    position: relative;
+    width: 243px;
+    height: 74px;
+    border-color: #FED60B;
+    background: rgba(0,0,0,0);
+    border-radius: 5px;
+    color: white;
+    top: 780px;
+    left: 700px;
+}
+#button_on_buy:hover{
+    background-color: #FED60B;
+    color: #141414;
+    cursor: pointer;
+}
+.reserve_ticket{
+    background-image: url('https://i.imgur.com/g2GM4zK.png');
+    background-repeat: no-repeat;
+    cursor: default;
 }

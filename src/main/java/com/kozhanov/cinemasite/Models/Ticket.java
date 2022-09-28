@@ -1,18 +1,26 @@
 package com.kozhanov.cinemasite.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.sql.Timestamp;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "ticket")
 public class Ticket {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_ticket")
     private int idTicket;
+    @Column(name = "id_schedule")
     private int idSchedule;
-    private int idSeriesInHall;
+    @Column(name = "id_series_in_hall")
+    private Integer idSeriesInHall;
+    @Column(name = "place")
     private int place;
+    @Column(name = "row")
     private int row;
-    private Timestamp startTime;
+
+    public void setIdSeriesInHall(Integer idSeriesInHall) {
+        this.idSeriesInHall = idSeriesInHall;
+    }
 
     public Ticket(){
 
@@ -23,7 +31,18 @@ public class Ticket {
         this.place=place;
         this.row = row;
     }
-
+    public Ticket(int idSchedule,int place,int row){
+        this.idSchedule=idSchedule;
+        this.place=place;
+        this.row = row;
+    }
+    public Ticket(int idTicket,int idSchedule,int place,int row,int idSeriesInHall){
+        this.idTicket=idTicket;
+        this.idSchedule=idSchedule;
+        this.place=place;
+        this.row = row;
+        this.idSeriesInHall=idSeriesInHall;
+    }
 
     public int getIdTicket() {
         return idTicket;
@@ -39,14 +58,6 @@ public class Ticket {
 
     public void setIdSchedule(int idSchedule) {
         this.idSchedule = idSchedule;
-    }
-
-    public Timestamp getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
     }
 
     public int getIdSeriesInHall() {

@@ -40,101 +40,20 @@ public class MainPageController {
             Optional<Film> film = filmRepo.findById(item.getIdFilm());
             LocalDate newLocalDate = item.getStartTime().toLocalDateTime().toLocalDate();
 
-            if(nowDate.getDayOfMonth()== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear()) {
-                boolean checker =true;
-                for (ScheduleForOut scheduleForOut:scheduleFirstDay) {
-                    if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
-                        scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
-                        checker=false;
-                    }
-                }
-                if(checker){
-                    ScheduleForOut newScheduleForOut = null;
-                    if(film.get().getUrlOnPoster()==null) {
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
-                    }
-                    else{
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
-                    }
-                    scheduleFirstDay.add(newScheduleForOut);
-                }
-            }
-            if(nowDate.getDayOfMonth()+1== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear()) {
-                boolean checker =true;
-                for (ScheduleForOut scheduleForOut:scheduleSecondDay) {
-                    if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
-                        scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
-                        checker=false;
-                    }
-                }
-                if(checker){
-                    ScheduleForOut newScheduleForOut = null;
-                    if(film.get().getUrlOnPoster()==null) {
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
-                    }
-                    else{
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
-                    }
-                    scheduleSecondDay.add(newScheduleForOut);
-                }
-            }
-            if(nowDate.getDayOfMonth()+2== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear()) {
-                boolean checker =true;
-                for (ScheduleForOut scheduleForOut:scheduleThridDay) {
-                    if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
-                        scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
-                        checker=false;
-                    }
-                }
-                if(checker){
-                    ScheduleForOut newScheduleForOut = null;
-                    if(film.get().getUrlOnPoster()==null) {
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
-                    }
-                    else{
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
-                    }
-                    scheduleThridDay.add(newScheduleForOut);
-                }
-            }
-            if(nowDate.getDayOfMonth()+3== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear()) {
-                boolean checker =true;
-                for (ScheduleForOut scheduleForOut:scheduleFourthDay) {
-                    if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
-                        scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
-                        checker=false;
-                    }
-                }
-                if(checker){
-                    ScheduleForOut newScheduleForOut = null;
-                    if(film.get().getUrlOnPoster()==null) {
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
-                    }
-                    else{
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
-                    }
-                    scheduleFourthDay.add(newScheduleForOut);
-                }
-            }
-            if(nowDate.getDayOfMonth()+4== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear()) {
-                boolean checker =true;
-                for (ScheduleForOut scheduleForOut:scheduleFifthDay) {
-                    if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
-                        scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
-                        checker=false;
-                    }
-                }
-                if(checker){
-                    ScheduleForOut newScheduleForOut = null;
-                    if(film.get().getUrlOnPoster()==null) {
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
-                    }
-                    else{
-                        newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
-                    }
-                    scheduleFifthDay.add(newScheduleForOut);
-                }
-            }
+            if(nowDate.getDayOfMonth()== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear())
+                 scheduleFirstDay=addItemToList(scheduleFirstDay,film,item);
+
+            if(nowDate.getDayOfMonth()+1== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear())
+               scheduleSecondDay=addItemToList(scheduleSecondDay,film,item);
+
+            if(nowDate.getDayOfMonth()+2== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear())
+                scheduleThridDay=addItemToList(scheduleThridDay,film,item);
+
+            if(nowDate.getDayOfMonth()+3== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear())
+                 scheduleFourthDay=addItemToList(scheduleFourthDay,film,item);
+
+            if(nowDate.getDayOfMonth()+4== newLocalDate.getDayOfMonth()&& nowDate.getMonthValue()==newLocalDate.getMonthValue() && nowDate.getYear()==newLocalDate.getYear())
+                scheduleFifthDay=addItemToList(scheduleFifthDay,film,item);
 
         }
 
@@ -156,6 +75,25 @@ public class MainPageController {
         model.addAttribute("scheduleSecondDay",scheduleSecondDay);
         return "html/mainPage";
     }
-
+    private  List<ScheduleForOut> addItemToList(List<ScheduleForOut> scheduleDay,Optional<Film> film,Schedule item){
+        boolean checker =true;
+        for (ScheduleForOut scheduleForOut:scheduleDay) {
+            if(scheduleForOut.getTitleFilm().equals(film.get().getTitle())){
+                scheduleForOut.getStartTime().add(new ScheduleId(new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours()-4) * 3600000).toString().substring(0,5),item.getIdSchedule()));
+                checker=false;
+            }
+        }
+        if(checker){
+            ScheduleForOut newScheduleForOut = null;
+            if(film.get().getUrlOnPoster()==null) {
+                newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getGenre(),film.get().getCountry());
+            }
+            else{
+                newScheduleForOut = new ScheduleForOut(item.getIdSchedule(), film.get().getTitle(), item.getIdHall(), new Time(item.getStartTime().getMinutes() * 60000 + (item.getStartTime().getHours() - 4) * 3600000),film.get().getUrlOnPoster(),film.get().getGenre(),film.get().getCountry());
+            }
+            scheduleDay.add(newScheduleForOut);
+        }
+        return scheduleDay;
+    }
 
 }
