@@ -56,9 +56,6 @@ public class MainPageController {
                 scheduleFifthDay=addItemToList(scheduleFifthDay,film,item);
 
         }
-
-      //  Iterable<Film> films = filmRepo.findAll();
-        //  model.addAttribute("nowDate",nowDate.getDayOfMonth());
         List<String> dates = new ArrayList<>();
         for (int i =0;i<5;i++){
             if(nowDate.getMonthValue()<10)

@@ -51,19 +51,4 @@ public class buyTicketPageController {
         return "html/buyTicketPage";
     }
 
-   /* @PostMapping("/shedule/{id}")
-    public String ticketUpdate(@PathVariable(value = "id")int id, ArrayList<Integer> placeTickets){
-        for (int item:placeTickets) {
-            int row =1;
-            while (item-14>0){
-                row++;
-            }
-            Ticket ticket =new Ticket(id,item-row*14,row);
-            ticketRepo.save(ticket);
-        }
-        return "redirect:/";
-    }
-
-    */
-
 }

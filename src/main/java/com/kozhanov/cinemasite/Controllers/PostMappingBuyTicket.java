@@ -23,9 +23,6 @@ public class PostMappingBuyTicket {
                 ticketsForWhile-=14;
             }
 
-
-            //Ticket ticket =new Ticket(id,item-row*14,row);
-         //  System.out.println(ticket.getIdTicket() + " " +ticket.getIdSchedule() + " " + ticket.getRow() + " " + ticket.getPlace());
             ticketRepo.save(new Ticket(27,1,1));
         }
         return "html/mainPage";
